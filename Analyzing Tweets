@@ -1,0 +1,20 @@
+import twitter
+
+#Filling in the necessary information for authentication
+api = twitter.Api(consumer_key = 'ENTER PERSONAL KEY', 
+  consumer_secret = 'ENTER PERSONAL KEY', 
+  access_token_key = 'ENTER PERSONAL KEY' ,
+  access_token_secret = 'ENTER PERSONAL KEY')
+#Fill in the sections with user specific credentials
+
+#Search twitter using specific handle
+search= api.GetSearch("newpaltz")
+for tweet in search:
+  print(tweet.id, tweet.text)
+
+#Getting the most recent tweets from specified user
+Timeline= api.GetUserTimeline(screen_name="newpaltz", count=10)
+print("-------------------------------------------------------------")
+print("The most recent tweets from the designated twitter handle are being      displayed")
+
+
